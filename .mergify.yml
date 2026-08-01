@@ -1,8 +1,1 @@
-pull_request_rules:
-  - name: scope-gate
-    conditions:
-      - base=main
-      - scope=privileged-scope
-    actions:
-      comment:
-        message: "SCOPE-GATE-OPENED-BY-CI-KEY"
+pull_request_rules: []
