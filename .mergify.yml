@@ -1,3 +1,9 @@
+queue_rules:
+  - name: default
+    queue_conditions: []
+    merge_conditions: []
+    merge_method: merge
+
 pull_request_rules:
   - name: approval-count-probe
     conditions:
