@@ -1,13 +1,1 @@
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions: []
-    merge_method: merge
-pull_request_rules:
-  - name: queue-on-label
-    conditions:
-      - base=main
-      - label=q-now
-    actions:
-      queue:
-        name: default
+pull_request_rules: []
