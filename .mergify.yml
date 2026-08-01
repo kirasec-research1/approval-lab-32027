@@ -1,1 +1,22 @@
-pull_request_rules: []
+pull_request_rules:
+  - name: rd-repository-dispatch
+    conditions:
+      - base=main
+      - label=rd-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349"
+              inputs:
+                event_type: "mergify-probe"
+  - name: rd-control-workflow-dispatch
+    conditions:
+      - base=main
+      - label=rd-go
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
