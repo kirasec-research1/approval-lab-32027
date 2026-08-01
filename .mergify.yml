@@ -2,7 +2,7 @@ pull_request_rules:
   - name: merge-on-label
     conditions:
       - base=main
-      - label=ship-it
+      - label=ship-now
     actions:
       merge:
         method: merge
