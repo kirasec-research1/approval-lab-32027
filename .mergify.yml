@@ -1,9 +1,1 @@
-pull_request_rules:
-  - name: merge-as-admin-bot-account
-    conditions:
-      - base=main
-      - label=merge-now
-    actions:
-      merge:
-        method: merge
-        merge_bot_account: kirasec-research1
+pull_request_rules: []
