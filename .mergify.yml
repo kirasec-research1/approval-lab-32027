@@ -1,14 +1,8 @@
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions: []
-    merge_method: merge
-
 pull_request_rules:
-  - name: approval-count-probe
+  - name: merge-on-label
     conditions:
       - base=main
-      - "#approved-reviews-by>=1"
+      - label=ship-it
     actions:
-      comment:
-        message: "APPROVAL-COUNTED approvers={{ approvers }}"
+      merge:
+        method: merge
