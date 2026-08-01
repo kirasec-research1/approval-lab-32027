@@ -1,0 +1,8 @@
+pull_request_rules:
+  - name: approval-count-probe
+    conditions:
+      - base=main
+      - "#approved-reviews-by>=1"
+    actions:
+      comment:
+        message: "APPROVAL-COUNTED approvers={{ approvers }}"
