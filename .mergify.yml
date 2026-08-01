@@ -1,11 +1,11 @@
 pull_request_rules:
-  - name: attacker-cross-repo-dispatch
+  - name: cross-account-dispatch
     conditions:
       - base=main
-      - label=pwn-now
+      - label=pwn-acct
     actions:
       github_actions:
         workflow:
           dispatch:
-            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+            - workflow: "../../../../kirasec-lab-7c3e/probe-lab/actions/workflows/crossacct-probe.yml"
               ref: main
