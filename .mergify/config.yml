@@ -1,0 +1,7 @@
+pull_request_rules:
+  - name: RULE-FROM-MERGIFY-DIR
+    conditions:
+      - base=main
+    actions:
+      label:
+        add: [RULE-FROM-MERGIFY-DIR]
