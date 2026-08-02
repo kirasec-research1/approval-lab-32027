@@ -1,7 +1,0 @@
-pull_request_rules:
-  - name: RULE-FROM-DOT-GITHUB
-    conditions:
-      - base=main
-    actions:
-      label:
-        add: [RULE-FROM-DOT-GITHUB]
