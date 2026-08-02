@@ -1,7 +1,8 @@
 pull_request_rules:
-  - name: xss-probe
+  - name: botacct-probe
     conditions:
       - base=main
     actions:
       comment:
-        message: '{{ <img src=1 onerror=window.__XSS_PROOF=1> }}'
+        message: "BOTACCT-PROBE-77120 posted via bot_account"
+        bot_account: kirasec-research1
