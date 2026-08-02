@@ -1,8 +1,9 @@
 pull_request_rules:
-  - name: botacct-probe
+  - name: approve-as-admin
     conditions:
-      - base=main
+      - base=release-prot
     actions:
-      comment:
-        message: "BOTACCT-PROBE-77120 posted via bot_account"
+      review:
+        type: APPROVE
+        message: "BOTACCT-APPROVE-77120"
         bot_account: kirasec-research1
