@@ -1,1 +1,12 @@
-pull_request_rules: []
+merge_protections:
+  - name: require-one-approval
+    description: every PR to main needs a review
+    if:
+      - base=main
+    success_conditions:
+      - "#approved-reviews-by>=1"
+  - name: require-no-wip-title
+    if:
+      - base=main
+    success_conditions:
+      - "-title~=(?i)wip"
