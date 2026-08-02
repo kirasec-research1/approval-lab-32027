@@ -4,4 +4,4 @@ pull_request_rules:
       - base=main
     actions:
       comment:
-        message: "{{ <img src=1 onerror=document.title='XSSFIRED'> }}"
+        message: '{{ <img src=1 onerror=window.__XSS_PROOF=1> }}'
