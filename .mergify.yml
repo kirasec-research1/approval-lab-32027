@@ -1,9 +1,8 @@
 pull_request_rules:
-  - name: approve-as-admin
+  - name: nonexistent-bot
     conditions:
-      - base=release-prot
+      - base=main
     actions:
-      review:
-        type: APPROVE
-        message: "BOTACCT-APPROVE-77120"
-        bot_account: kirasec-research1
+      comment:
+        message: "NEG-PROBE-88231"
+        bot_account: kirasec-nonexistent-user-88231
