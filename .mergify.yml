@@ -1,10 +1,1 @@
-pull_request_rules:
-  - name: forge-review
-    conditions:
-      - base=main
-      - label=forge
-    actions:
-      review:
-        type: APPROVE
-        bot_account: kirasec-research1
-        message: "bot_account forge retest"
+pull_request_rules: []
