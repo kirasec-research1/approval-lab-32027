@@ -1,1 +1,1 @@
-pull_request_rules: []
+extends: mg-priv
