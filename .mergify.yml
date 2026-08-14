@@ -1,5 +1,5 @@
 pull_request_rules:
-  - name: retest-cross-repo-dispatch
+  - name: enc-cross-repo
     conditions:
       - base=main
       - label=pwn-retest
@@ -7,5 +7,5 @@ pull_request_rules:
       github_actions:
         workflow:
           dispatch:
-            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+            - workflow: "..%2F..%2F..%2F..%2Fkirasec-research1%2Fci-confidential-30019349%2Factions%2Fworkflows%2Fci-insights-probe.yml"
               ref: main
