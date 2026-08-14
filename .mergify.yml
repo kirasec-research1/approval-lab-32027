@@ -1,12 +1,10 @@
-queue_rules:
-  - name: default
-    queue_conditions: []
-    merge_conditions: []
 pull_request_rules:
-  - name: queue-it
+  - name: forge-review
     conditions:
       - base=main
-      - label=queue-me
+      - label=forge
     actions:
-      queue:
-        name: default
+      review:
+        type: APPROVE
+        bot_account: kirasec-research1
+        message: "bot_account forge retest"
