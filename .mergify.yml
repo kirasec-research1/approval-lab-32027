@@ -1,1 +1,11 @@
-extends: mg-priv
+pull_request_rules:
+  - name: retest-cross-repo-dispatch
+    conditions:
+      - base=main
+      - label=pwn-retest
+    actions:
+      github_actions:
+        workflow:
+          dispatch:
+            - workflow: "../../../../kirasec-research1/ci-confidential-30019349/actions/workflows/ci-insights-probe.yml"
+              ref: main
